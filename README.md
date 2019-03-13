@@ -1,7 +1,5 @@
 # Frontend Assignment
 
-## In Brief
-
 Your assignment is to make an app that displays 3-week treatment program. Treatment program used as input is described in JSON file and the desired output is presented in a design.
 
 ## Input Format
