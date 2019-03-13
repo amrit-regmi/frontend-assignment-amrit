@@ -6,7 +6,7 @@ Your assignment is to make an app that displays 3-week treatment program. Treatm
 
 ## Input Format
 
-Example input for the 3-week treatment program is located in [examples/programs.json](examples/program.json). The input has the following format:
+Example input for the 3-week treatment program is located in [examples/program.json](examples/program.json). The input has the following format:
 
 ```json
 {
