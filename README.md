@@ -9,9 +9,9 @@ Example input for the 3-week treatment program is located in [examples/program.j
 ```json
 {
   "week<number>": [{
-    "weekday": "MONDAY" / "TUESDAY" / "WEDNESDAY" / "THURSDAY" / "FRIDAY" / "SATURDAY" / "SUNDAY",
+    "weekday": "MONDAY" || "TUESDAY" || "WEDNESDAY" || "THURSDAY" || "FRIDAY" || "SATURDAY" || "SUNDAY",
     "title": "Title for the daily activity",
-    "completed": true / false
+    "completed": true || false
   }, ...]
 }
 ```
