@@ -22,13 +22,13 @@ Input contains three weeks. Each week contains multiple activities. Each activit
 
 ![](examples/design.png)
 
-Treatment program is visualised on a calendar. Calendar is always displaying current ongoing month and displays today as active with a different background color (14th in the picture above).
+Treatment program is visualised on a calendar. The calendar is always displaying current ongoing month and displays today as active with a different background color (14th in the picture above).
 
 The treatment program starts on the first full week of the month and continues for three weeks. The activity of the day is displayed under the day number. The day number will have different color depending on whether it has an activity or not.
 
-If a user has not completed an activity the activity will be moved to the current day. There can be only one activity per day. Thus if there are multiple uncompleted activities in the past the first incomplete activity will be displayed today, the second tomorrow and so forth.
+If a user has not completed an activity in the past, the activity will be moved to the current day. There can be only one activity per day. Thus if there are multiple incomplete activities in the past, the first incomplete activity will be displayed today, the second tomorrow, and so forth. For the previous days only completed activities will be displayed.
 
-Your app should match the design in the picture above and the following specs:
+Your app should match the design in the picture above using the following specs:
 
 ### Colors
 
