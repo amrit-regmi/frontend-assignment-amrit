@@ -51,6 +51,6 @@ Assignment must use React. Otherwise feel free to use any tools and 3rd party li
 
 Make a pull request of your assignment and leave it open when you are done :slightly_smiling_face:
 
-You should at least update the `README.md` with installation and running instructions for your app.
+You should at least update the `README.md` with installation and running instructions. Also consider how you demonstrate that your app is working as intended.
 
 **Remember to check that you have committed all required files and instructions before submitting the pull request** :white_check_mark: Good way to check this is to clone the repository into different folder and follow the instructions you have written to run the app.
