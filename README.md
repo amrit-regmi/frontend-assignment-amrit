@@ -1,56 +1,46 @@
-# Frontend Assignment
+# Getting Started with Create React App
 
-Your assignment is to make an app that displays 3-week treatment program. Treatment program used as input is described in JSON file and the desired output is presented in a design.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Input Format
+## Available Scripts
 
-Example input for the 3-week treatment program is located in [examples/program.json](examples/program.json). The input has the following format:
+In the project directory, you can run:
 
-```json
-{
-  "week<number>": [{
-    "weekday": "MONDAY" || "TUESDAY" || "WEDNESDAY" || "THURSDAY" || "FRIDAY" || "SATURDAY" || "SUNDAY",
-    "title": "Title for the daily activity",
-    "completed": true || false
-  }, ...]
-}
-```
+### `npm start`
 
-Input contains three weeks. Each week contains multiple activities. Each activity has three fields: `weekday` indicates the day of week for the activity, `title` is a short description of the daily activity and `completed` indicates whether the user has done the activity.
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-## Output Design
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
 
-![](examples/design.png)
+### `npm test`
 
-Treatment program is visualised on a calendar. The calendar is always displaying current ongoing month and displays today as active with a different background color (14th in the picture above).
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-The treatment program starts on the first full week of the month and continues for three weeks. The activity of the day is displayed under the day number. The day number will have different color depending on whether it has an activity or not.
+### `npm run build`
 
-If a user has not completed an activity in the past, the activity will be moved to the current day. There can be only one activity per day. Thus if there are multiple incomplete activities in the past, the first incomplete activity will be displayed today, the second tomorrow, and so forth. For the previous days only completed activities will be displayed.
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-Your app should match the design in the picture above using the following specs:
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-### Colors
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-* Black: `rgba(0, 0, 0, 0.8)`
-* Green: `rgb(93, 175, 116)`
-* White: `rgb(255, 255, 255)`
+### `npm run eject`
 
-### Text Styles
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-* `h1` [Fjalla One 700](https://fonts.google.com/?query=Fjalla+One) `48px / 1.3`
-* `h2` [Libre Franklin 700](https://fonts.google.com/?query=Libre+Franklin) `64px`
-* `h3` [Libre Franklin 400](https://fonts.google.com/?query=Libre+Franklin) `10px / 1.2`
-* `th` [Work Sans 700](https://fonts.google.com/?query=Work+Sans) `16px`
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-## Tech
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-Assignment must use React. Otherwise feel free to use any tools and 3rd party libraries you like.
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Delivering
+## Learn More
 
-Make a pull request of your assignment and leave it open when you are done :slightly_smiling_face:
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-You should at least update the `README.md` with installation and running instructions. Also consider how you demonstrate that your app is working as intended.
-
-**Remember to check that you have committed all required files and instructions before submitting the pull request** :white_check_mark: Good way to check this is to clone the repository into different folder and follow the instructions you have written to run the app.
+To learn React, check out the [React documentation](https://reactjs.org/).
