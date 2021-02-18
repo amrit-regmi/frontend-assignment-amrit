@@ -5,13 +5,15 @@ import DateCell from './DateCell'
 const WeekRow:FC<{startDate:Date, treatmentWeekNumber:number}> = ({startDate,treatmentWeekNumber}) => {
     
   const startDay = getDayNumber(startDate)
+ 
+  //Store each day for a week 
   const dates = [...Array(7)].map((date,index)=> {
       const newDate = new Date(startDate.getFullYear(), startDate.getMonth(), startDate.getDate()+index-startDay)
       
-      if(index < startDay || newDate.getMonth() !== startDate.getMonth()) {
+      // If day does not belong to current month then return null
+      if(newDate.getMonth() !== startDate.getMonth()) {
         return null
       }
-
       return  newDate
     })
 

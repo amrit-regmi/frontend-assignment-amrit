@@ -41,14 +41,20 @@ code {
 }
 
 .dateCell{
-  border: 3px solid rgb(93, 175, 116);
-  height: 150px;
-  width:150px;
+  vertical-align: top;
+  padding-top: 15px;
+  border: 3px solid #5daf74;
+  height: 137px;
+  width: 152px;
 }
 
 .dateCellToday{
   color: rgb(255, 255, 255) !important;
   background-color: rgb(93, 175, 116);
+}
+
+.dateCellHasActivity{
+  color: rgb(93, 175, 116);
 }
 
 h1 {
@@ -71,4 +77,12 @@ th {
   font: 700 16px Work Sans;
   border:3px solid rgb(93, 175, 116);
   padding: 10px 0;
+}
+
+.white {
+  color:  rgb(255, 255, 255) 
+}
+
+.pureBlack {
+  color: rgba(0, 0, 0);
 }
