@@ -33,5 +33,5 @@ export type CalenderAction =
 
 export type Store = {
   calender:Calender,
-  data:WeeklyData
+  data?:WeeklyData
 }

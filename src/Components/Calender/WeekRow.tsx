@@ -2,7 +2,7 @@ import React, { FC } from 'react'
 import { getDayNumber} from '../../Utils/dateHelper'
 import DateCell from './DateCell'
 
-const WeekRow:FC<{startDate:Date, treatmentWeekNumber:number}> = ({startDate,treatmentWeekNumber}) => {
+const WeekRow:FC<{startDate:Date}> = ({startDate}) => {
     
   const startDay = getDayNumber(startDate)
  
@@ -24,7 +24,7 @@ const WeekRow:FC<{startDate:Date, treatmentWeekNumber:number}> = ({startDate,tre
             <DateCell 
               key={index} 
               date={date} 
-              treatmentWeekNumber = {treatmentWeekNumber}
+
               />
           )
 

@@ -1,46 +1,31 @@
 import React, { FC, useEffect } from 'react'
-import { useDataProvider } from '../../Context.tsx/DataProvider'
-import { getDayNumber, getDayNumberFromString, isToday } from '../../Utils/dateHelper'
+import { getDayNumber, getDayNumberFromString, getTreatmentWeekNumber, isToday } from '../../Utils/dateHelper'
 import {Day, MonthNumber, WeeklyDataKey} from '../../Types/types'
-import { ADD_TO_CALENDER } from '../../Context.tsx/reducer'
+import { useDataProvider } from '../../Context/useDataProvider'
+import { updateToCalender } from '../../Reducer/actions'
 
+const DateCell:FC<{date:Date | null }> = ({date}) => {
+  const [state,dispatch] = useDataProvider()
 
-const DateCell:FC<{date:Date | null , treatmentWeekNumber:number }> = ({date,treatmentWeekNumber,}) => {
-  const [state,dispatch] =useDataProvider()
   useEffect(()=>{
+    if(!date){
+      return 
+    }
+    const treatmentWeekNumber = getTreatmentWeekNumber(date)
     const weeklyData = 
       state['data'] &&
       state['data']['week'+treatmentWeekNumber as WeeklyDataKey]
-    
-    if(weeklyData && date){
-      const today = new Date()
 
+    if(weeklyData && date){
       weeklyData.forEach( data => { 
-        
         if( getDayNumberFromString(data.weekday as Day) !== getDayNumber(date)) { //If the current day is not same as data day skip
           return
-        }
-        
-        //Proceed after the days  match
-        if(!data.completed && date.getTime() < today.getTime() && date.getMonth() === today.getMonth() &&  date.getFullYear() === today.getFullYear()){  
-          // If action is not completed for the day and action is on past but on this month 
-          //(month/year check is implemented to prevent action shifting to currentMonth if the initalized month is not current month) 
-          dispatch({
-            type:ADD_TO_CALENDER,
-            payload: {date:today,data}
-          })
-          return 
-        }
-        
-        // Proceed only if completed or not viewing current month
-        dispatch({
-            type:ADD_TO_CALENDER,
-            payload: {date,data}
-        })
+        }     
+        dispatch(updateToCalender(date,data))
       })
     }
   
-  },[date,treatmentWeekNumber])
+  },[date])
 
   const data = date 
     && state['calender'][date.getFullYear()] 

@@ -1,6 +1,6 @@
-import React, { useReducer, createContext, FC, Dispatch, useMemo, useContext } from 'react'
+import React, { useReducer, createContext, FC, Dispatch, useMemo } from 'react'
 import { Store, CalenderAction, Calender, WeeklyData  } from '../Types/types'
-import reducer from './reducer'
+import reducer from '../Reducer/reducer'
 import data from './data.json'
 
 
@@ -26,5 +26,3 @@ export const DataProvider: FC = ({ children }) => {
   )
 }
 
-// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-export const useDataProvider = () => useContext(StoreContext)

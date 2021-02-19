@@ -7,25 +7,16 @@ const Calender:FC<{currentMonth:MonthNumber,currentYear:number}> = ({currentMont
   const days = ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT' ,'SUN']
   
   const weekStartDate= new Date(currentYear,currentMonth,1) //First day of month
-  let treatmentWeekNumber = 0  
-   
   //Data per week 
   const weeks = [...Array(getTotalWeekSpanForMonth(currentMonth,currentYear))].map(() => {
     const currentWeekStartDate = new Date(weekStartDate.getFullYear(),weekStartDate.getMonth(),weekStartDate.getDate())
-
-    if(getDayNumber(currentWeekStartDate)=== 0){
-      //If the week is not full week then 0 else increment by 1
-      treatmentWeekNumber= treatmentWeekNumber+1
-    }
-
     const weekData = {
       startDate: currentWeekStartDate,
-      treatmentWeekNumber: treatmentWeekNumber
     }
-    
     weekStartDate.setDate(weekStartDate.getDate() + 7 - getDayNumber(weekStartDate))
     return weekData
   })
+  
 
   return(
     <table className= 'calenderTable'>

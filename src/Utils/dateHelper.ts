@@ -76,3 +76,17 @@ export const isDateEqual = (date1:Date,date2:Date):boolean => {
   }
   return false
 }
+
+/**
+ * @param date Date Object
+ *  @param date2 Date Object
+ * @returns treatment week number 0 if week does not start on Mon
+ */
+export const getTreatmentWeekNumber = (date:Date):number => {
+  const monthstartDay = getFirstDayOfMonth(date.getMonth() as MonthNumber,date.getFullYear())
+  const prependDays = monthstartDay || 7 -1
+  const calc =Math.trunc((prependDays +date.getDate())/7)
+  return calc
+
+  
+}

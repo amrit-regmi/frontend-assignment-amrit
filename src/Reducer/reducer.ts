@@ -1,9 +1,9 @@
 import { Calender, CalenderAction, MonthNumber, Program, Store } from '../Types/types'
 import { getDaysInMonth } from '../Utils/dateHelper'
 export const ADD_TO_CALENDER = 'ADD_TO_CALENDER'
-export const INITIALIZE_MONTH = 'INITIALIZE_MONTH'
 
 const addToCalender = (calender:Calender, payload:{ date: Date, data: Program } ): Calender => {
+
   const year =  payload.date.getFullYear()
   const month = payload.date.getMonth() as MonthNumber
   const date = payload.date.getDate() 
@@ -37,3 +37,5 @@ const reducer = (state:Store , action : CalenderAction ) : Store => {
   }
 }
 export default reducer
+
+
