@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/frontend-assignment-amrit/static/css/main.c8fc6385.chunk.css",
+    "main.js": "/frontend-assignment-amrit/static/js/main.3e1f4c81.chunk.js",
+    "main.js.map": "/frontend-assignment-amrit/static/js/main.3e1f4c81.chunk.js.map",
+    "runtime-main.js": "/frontend-assignment-amrit/static/js/runtime-main.53f54067.js",
+    "runtime-main.js.map": "/frontend-assignment-amrit/static/js/runtime-main.53f54067.js.map",
+    "static/js/2.01da2662.chunk.js": "/frontend-assignment-amrit/static/js/2.01da2662.chunk.js",
+    "static/js/2.01da2662.chunk.js.map": "/frontend-assignment-amrit/static/js/2.01da2662.chunk.js.map",
+    "index.html": "/frontend-assignment-amrit/index.html",
+    "static/css/main.c8fc6385.chunk.css.map": "/frontend-assignment-amrit/static/css/main.c8fc6385.chunk.css.map",
+    "static/js/2.01da2662.chunk.js.LICENSE.txt": "/frontend-assignment-amrit/static/js/2.01da2662.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.53f54067.js",
+    "static/js/2.01da2662.chunk.js",
+    "static/css/main.c8fc6385.chunk.css",
+    "static/js/main.3e1f4c81.chunk.js"
+  ]
+}
