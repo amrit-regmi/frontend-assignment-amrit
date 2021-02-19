@@ -72,10 +72,9 @@ describe ('Test the date is rendered', () => {
   })
 
   test('if given date is not null, should not render date ',() => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const date: any = null
-    const treatmentWeekNumber = 4
-    
-    const cellData = { date, treatmentWeekNumber}
+    const cellData = { date}
     const component = render(<DataProvider><DateCell {...cellData}/></DataProvider>)
     const cell =  component.container.querySelector('h2')
     expect (cell).toHaveTextContent('')
