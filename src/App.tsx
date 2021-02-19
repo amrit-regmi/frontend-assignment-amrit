@@ -12,7 +12,6 @@ type URLparams = {
 const App:FC = () => {
   const today = new Date()
   const params:URLparams = useParams() 
-
   const month = parseInt(params.month) >=1 ? parseInt(params.month)-1: today.getMonth()
   const year = parseInt(params.year) || today.getFullYear()
 

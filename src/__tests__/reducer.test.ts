@@ -25,7 +25,7 @@ describe('testing reducer and actions' , () => {
   })
 
 /**calender is populated on ascending order so incase of conflict new action is always later on the order so should always be added to next avalable slot*/
-  test('if there is already  activity on given date and the activity are not equal then it will be added to today or next avalible day and so on ', () => {
+ test('if there is already  activity on given date and the activity are not equal then it will be added to today or next avalible day and so on ', () => {
     const state = {calender:{}}
 
     MockDate.set('2021-2-17') //Set current date to feb 17
@@ -47,11 +47,7 @@ describe('testing reducer and actions' , () => {
     }
 
     const newState1 = reducer(state,updateToCalender(date, payLoadData1))
-
-
-
     const newState2 = reducer(newState1,updateToCalender(date, payLoadData2))
-
     const data = newState2.calender[2021] && newState2.calender[2021][1]
     
     expect (data[today.getDate()-1]).toEqual(payLoadData1)

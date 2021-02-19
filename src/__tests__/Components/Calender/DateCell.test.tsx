@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-array-constructor */
+
 import React from 'react'
 import '@testing-library/jest-dom/extend-expect'
 import { render } from '@testing-library/react'
@@ -77,7 +77,7 @@ describe ('Test the date is rendered', () => {
     const cellData = { date}
     const component = render(<DataProvider><DateCell {...cellData}/></DataProvider>)
     const cell =  component.container.querySelector('h2')
-    expect (cell).toHaveTextContent('')
+    expect (cell).toBe(null)
   })
 
 

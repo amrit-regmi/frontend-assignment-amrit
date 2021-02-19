@@ -36,10 +36,12 @@ const DateCell:FC<{date:Date | null }> = ({date}) => {
   
   return (
     <td className = {`dateCell ${istoday? 'dateCellToday': ''} ${data?'dateCellHasActivity':''}`}> 
+    {date && 
       <div>
-        <h2>{date && date.getDate()}</h2>
+        <h2>{ date.getDate()}</h2>
         <h3 className = {!istoday? 'pureBlack' : 'white'}>{data && data.title.toLocaleUpperCase()}</h3>
-      </div> 
+      </div>
+    } 
     </td>
   )
 }
