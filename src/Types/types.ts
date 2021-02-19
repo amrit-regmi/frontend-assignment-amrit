@@ -1,5 +1,5 @@
 
-export type Day = "MONDAY" | "TUESDAY" | "WEDNESDAY" | "THURSDAY" | "FRIDAY" | "SATURDAY" | "SUNDAY"
+export type Day = 'MONDAY' | 'TUESDAY' | 'WEDNESDAY' | 'THURSDAY' | 'FRIDAY' | 'SATURDAY' | 'SUNDAY'
 export type Program =  {
   weekday: Day
   title: string
@@ -7,7 +7,7 @@ export type Program =  {
 }
 export type PossibleWeekNumber =  4 | 5 | 6
 export type MonthNumber  = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11
-export type DayNumber = 0 | 1 | 2 | 3 | 4 | 5 | 6 
+export type DayNumber = 0 | 1 | 2 | 3 | 4 | 5 | 6
 
 export type WeeklyDataKey = `week${ 0 | 1 | 2 | 3 | 4}`
 

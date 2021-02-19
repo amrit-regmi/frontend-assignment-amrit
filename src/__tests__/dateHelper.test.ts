@@ -1,7 +1,7 @@
 import {
   getDaysInMonth ,getFirstDayOfMonth ,
   getDayNumber ,getTotalWeekSpanForMonth, isToday,
-  isDateEqual} from '../Utils/dateHelper' ;
+  isDateEqual } from '../Utils/dateHelper'
 
 describe('Testing Date Helper Function' ,() => {
   describe('getDaysinMonth', () => {
@@ -12,7 +12,7 @@ describe('Testing Date Helper Function' ,() => {
       expect(getDaysInMonth(1,2021)).toBe(28)
     })
   })
-  
+
   describe('getFirstDayofMonth', () => {
     test('first day of Feb 2020 is 5 saturday', () => {
       expect(getFirstDayOfMonth(1,2020)).toBe(5)
@@ -47,10 +47,10 @@ describe('Testing Date Helper Function' ,() => {
     test('testing with todays date will return true', () => {
       expect(isToday(today)).toBe(true)
     })
-    test('testing with tommorow date date will return false', () => { 
+    test('testing with tommorow date date will return false', () => {
       expect(isToday(tomorrow)).toBe(false)
     })
-    test('testing with yestarday date date will return false', () => { 
+    test('testing with yestarday date date will return false', () => {
       expect(isToday(yesterday)).toBe(false)
     })
   })
@@ -58,11 +58,11 @@ describe('Testing Date Helper Function' ,() => {
   describe('isDateEqual', () => {
     const date1 = new Date()
     const date2 = new Date(date1.getFullYear(),date1.getMonth(),date1.getDate()+1,0,12,0)
-  
+
     test('testing with tow equal date will return true', () => {
       expect(isDateEqual(date1,date1)).toBe(true)
     })
-    test('testing with todays/tommorow date date will return true', () => { 
+    test('testing with todays/tommorow date date will return true', () => {
       expect(isDateEqual(date1,date2)).toBe(false)
     })
   })

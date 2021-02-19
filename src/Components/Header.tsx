@@ -1,13 +1,13 @@
-import React, { FC } from 'react';
+import React, { FC } from 'react'
 
-const Header:FC<{ title: string }> = ({title}) => {
+const Header:FC<{ title: string }> = ({ title }) => {
 
-return (
-  <div className='header'>
+  return (
+    <div className='header'>
       <h1>{title}</h1>
-  </div>  
-  
-)
+    </div>
+
+  )
 }
 
 export default Header

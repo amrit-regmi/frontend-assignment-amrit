@@ -1,8 +1,8 @@
-import { Day, DayNumber, MonthNumber, PossibleWeekNumber } from "../Types/types"
+import { Day, DayNumber, MonthNumber, PossibleWeekNumber } from '../Types/types'
 
 /**
- * @param month javascript month int ie. january is 0 and so on 
- * @param year year- number ofdays in  isdiffernt on leap year 
+ * @param month javascript month int ie. january is 0 and so on
+ * @param year year- number ofdays in  isdiffernt on leap year
  * @returns number of days inamonth
  */
 export const getDaysInMonth = (month:MonthNumber ,year: number ):number => {
@@ -11,30 +11,30 @@ export const getDaysInMonth = (month:MonthNumber ,year: number ):number => {
 }
 
 /**
- * @param month javascript month int ie. january is 0 and so on 
- * @param year year- number ofdays in  isdiffernt on leap year 
+ * @param month javascript month int ie. january is 0 and so on
+ * @param year year- number ofdays in  isdiffernt on leap year
  * @returns number daynumber 0 being Munday
  */
 export const getFirstDayOfMonth = (month:MonthNumber,year:number):DayNumber => {
   const newDate = new Date(year,month,1)
-  const day = newDate.getDay() -1 //Shifting daynumber so monday is 0 and so on 
-  if( day=== -1) return 6 //If day is sunday  
-   return day as DayNumber
-}
-
-/**
- * @param date Date Object 
- * @returns number  daynumber 0 being Munday, first day of the week for the date 
- */
-export const getDayNumber = (date:Date):DayNumber => {
-  const day = date.getDay() -1 //Shifting daynumber so monday is 0 and so on 
-  if( day=== -1) return 6 //If day is sunday  
+  const day = newDate.getDay() -1 //Shifting daynumber so monday is 0 and so on
+  if( day=== -1) return 6 //If day is sunday
   return day as DayNumber
 }
 
 /**
- * @param month javascript month int ie. january is 0 and so on 
- * @param year year- number ofdays in  isdiffernt on leap year 
+ * @param date Date Object
+ * @returns number  daynumber 0 being Munday, first day of the week for the date
+ */
+export const getDayNumber = (date:Date):DayNumber => {
+  const day = date.getDay() -1 //Shifting daynumber so monday is 0 and so on
+  if( day=== -1) return 6 //If day is sunday
+  return day as DayNumber
+}
+
+/**
+ * @param month javascript month int ie. january is 0 and so on
+ * @param year year- number ofdays in  isdiffernt on leap year
  * @returns number - number of weeks that the month spans 4 5 or 6
  */
 export const getTotalWeekSpanForMonth = (month:MonthNumber,year:number): PossibleWeekNumber => {
@@ -45,7 +45,7 @@ export const getTotalWeekSpanForMonth = (month:MonthNumber,year:number): Possibl
 }
 
 /**
- * 
+ *
  * @param date Date Object
  * @returns boolean if the given date same day as today
  */
@@ -55,12 +55,12 @@ export const isToday = (date:Date):boolean => {
 }
 
 /**
- * 
+ *
  * @param day String of Day type ex 'MONDAY'
  * @returns number daynumber 0 being Munday
  */
 export const getDayNumberFromString = (day:Day):DayNumber => {
-  const days = ["MONDAY" , "TUESDAY" , "WEDNESDAY" , "THURSDAY" , "FRIDAY" , "SATURDAY" , "SUNDAY"]
+  const days = ['MONDAY' , 'TUESDAY' , 'WEDNESDAY' , 'THURSDAY' , 'FRIDAY' , 'SATURDAY' , 'SUNDAY']
   return days.indexOf(day.toUpperCase()) as DayNumber
 }
 
@@ -88,5 +88,5 @@ export const getTreatmentWeekNumber = (date:Date):number => {
   const calc =Math.trunc((prependDays +date.getDate())/7)
   return calc
 
-  
+
 }

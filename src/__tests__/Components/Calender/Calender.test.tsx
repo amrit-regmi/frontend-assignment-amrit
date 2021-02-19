@@ -10,7 +10,7 @@ describe ('Should render enough rows to contain the total days', () => {
       currentMonth: 7 as MonthNumber,
       currentYear: 2021
     }
-  
+
     const component = render(<Calender {...calender}></Calender>)
     const rows =  component.container.querySelectorAll('tbody > tr')
     expect (rows.length).toBe(6)
@@ -21,7 +21,7 @@ describe ('Should render enough rows to contain the total days', () => {
       currentMonth: 2 as MonthNumber,
       currentYear: 2021
     }
-  
+
     const component = render(<Calender {...calender}></Calender>)
     const rows =  component.container.querySelectorAll('tbody > tr')
     expect (rows.length).toBe(5)
@@ -32,7 +32,7 @@ describe ('Should render enough rows to contain the total days', () => {
       currentMonth: 1 as MonthNumber,
       currentYear: 2021
     }
-  
+
     const component = render(<Calender {...calender}></Calender>)
     const rows =  component.container.querySelectorAll('tbody > tr')
     expect (rows.length).toBe(4)
