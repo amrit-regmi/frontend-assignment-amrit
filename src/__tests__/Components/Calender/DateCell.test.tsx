@@ -2,21 +2,15 @@ import React from 'react'
 import '@testing-library/jest-dom/extend-expect'
 import { render } from '@testing-library/react'
 import DateCell from '../../../Components/Calender/DateCell'
-import { MonthNumber, Store, WeeklyData } from '../../../Types/types'
+import { Store } from '../../../Types/types'
 import  { DataProvider }  from '../../../Context/DataProvider'
 import { useDataProvider } from '../../../Context/useDataProvider'
 import { act } from 'react-dom/test-utils'
-import { getDayNumber, getDaysInMonth, getTreatmentWeekNumber } from '../../../Utils/dateHelper'
-import data from '../../../Context/data.json'
 import ReactRouter from 'react-router'
 
 jest.mock('../../../Context/useDataProvider')
 
 
-
-
-const newTypedData:WeeklyData = {}
-const typedData = Object.assign(data,newTypedData) //TypeCast JSON data
 
 const mockDates = [1,13,16]
 const mockMonth = 1
@@ -24,7 +18,7 @@ const mockYear =2021
 const mockDispatch = jest.fn()
 
 beforeEach(() => {
-  const days = [...new Array(getDaysInMonth(mockMonth,mockYear))]
+  const days = {}
   const mockState:Store =  {
     calender:{
       [mockYear]: {
@@ -33,7 +27,7 @@ beforeEach(() => {
     },
   }
   mockDates.forEach(date => {
-    mockState['calender'][mockYear][mockMonth][date-1] = {
+    mockState['calender'][mockYear][mockMonth][date] = {
       'weekday': 'MONDAY',
       'title': `The Meru Health Program TEST ${date}`,
       'completed': true
@@ -94,34 +88,6 @@ describe ('Test the date is rendered', () => {
 })
 
 
-describe('Test treatment program only starts on first full week of Month' ,() => {
-  test('disptachs update on calender if day falls on full week and action exists', () => {
-    const mockState:Store =  {
-      calender:{},
-      data: typedData
-    }
-    const useDataProviderMock = useDataProvider as jest.MockedFunction<typeof useDataProvider>
-    useDataProviderMock.mockReturnValue([mockState, mockDispatch ])
 
-    const months = [0,1,7]//run test for Jan Feb August 2021
-    months.forEach( month => {
-      const daysInmonth = getDaysInMonth(month as MonthNumber,2021)
-      for(let i = 1; i <=daysInmonth;i++  ){
-        const date = new Date(2021,month,i)
-        jest.clearAllMocks()
-        render(<DataProvider><DateCell date= {date}/></DataProvider>)
-
-        if([0,2,4].includes(getDayNumber(date))){ //If date is on Mon Wed or Fri - Based onMock Data
-          if([1,2,3].includes(getTreatmentWeekNumber(date))){
-            expect(mockDispatch).toBeCalledTimes(1)
-          }
-          else{
-            expect(mockDispatch).toBeCalledTimes(0)
-          }
-        }
-      }
-    })
-  })
-})
 
 

@@ -15,19 +15,21 @@ export type WeeklyData = {
   [key in  WeeklyDataKey]?: Array<Program>
 }
 
+export type MonthData = {[ key in number]?: Program}
 /**Storing the calender with full dates because calender can bereused for other purposes */
 export type Calender = {
   [year in number]?: {
-    [month in MonthNumber]? :Array<Program | null>
+    [month in MonthNumber]? : MonthData
   }
 }
 
 export type CalenderAction =
    {
-      type: 'ADD_TO_CALENDER',
+      type: 'UPDATE_MONTHLY_ACTION_TO_CALENDER',
       payload: {
-        date: Date,
-        data: Program
+        year: number,
+        month: MonthNumber,
+        data: MonthData
       }
     }
 
