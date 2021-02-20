@@ -1,7 +1,12 @@
-# Getting Started with Create React App
+## App is deployed at  https://calender-frontend.herokuapp.com/
+
+Uri params 
+    '/mock/yearnumber/monthnumber' renders requested month calender but does not shift the uncomplete activites.
+		'/mock/yearnumber/monthnumber/date' renders requested month and mocks requested date as today. 
+
+# Getting Started with Create React App 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
 ## Available Scripts
 
 In the project directory, you can run:
