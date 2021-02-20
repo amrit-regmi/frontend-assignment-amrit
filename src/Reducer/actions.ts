@@ -6,8 +6,8 @@ type DataPayload = {
   date:Date
 }
 
-export const updateToCalender = (date:Date,data:Program) : CalenderAction => {
-  const today =new Date()
+export const updateToCalender = (date:Date,data:Program, mockdate?:Date | null ) : CalenderAction => {
+  const today = mockdate || new Date()
   const payload : DataPayload =  { date,data }
   if(!data.completed && date.getTime() < today.getTime() && date.getMonth() === today.getMonth() &&  date.getFullYear() === today.getFullYear()){
     // If action is not completed for the day and action is on past but on this month

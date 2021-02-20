@@ -3,6 +3,11 @@ import '@testing-library/jest-dom/extend-expect'
 import { render } from '@testing-library/react'
 import Calender from '../../../Components/Calender'
 import { MonthNumber } from '../../../Types/types'
+import ReactRouter from 'react-router'
+
+beforeEach(() => {
+  jest.spyOn(ReactRouter, 'useParams').mockReturnValue({ })
+})
 
 describe ('Should render enough rows to contain the total days', () => {
   test('should render 6 calender rows for August 2021',() => {

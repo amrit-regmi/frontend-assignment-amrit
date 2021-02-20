@@ -3,12 +3,9 @@ import Calender from './Components/Calender'
 import Header from './Components/Header'
 import { DataProvider } from './Context/DataProvider'
 import { useParams } from 'react-router-dom'
-import { MonthNumber } from './Types/types'
+import { MonthNumber,URLparams } from './Types/types'
 
-type URLparams = {
-  month?:string
-  year?:string
-}
+
 const App:FC = () => {
   const today = new Date()
   const params:URLparams = useParams()

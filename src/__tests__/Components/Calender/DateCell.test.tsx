@@ -1,4 +1,3 @@
-
 import React from 'react'
 import '@testing-library/jest-dom/extend-expect'
 import { render } from '@testing-library/react'
@@ -9,8 +8,11 @@ import { useDataProvider } from '../../../Context/useDataProvider'
 import { act } from 'react-dom/test-utils'
 import { getDayNumber, getDaysInMonth, getTreatmentWeekNumber } from '../../../Utils/dateHelper'
 import data from '../../../Context/data.json'
+import ReactRouter from 'react-router'
 
 jest.mock('../../../Context/useDataProvider')
+
+
 
 
 const newTypedData:WeeklyData = {}
@@ -39,7 +41,7 @@ beforeEach(() => {
   })
   const useDataProviderMock = useDataProvider as jest.MockedFunction<typeof useDataProvider>
   useDataProviderMock.mockReturnValue([mockState, mockDispatch ])
-
+  jest.spyOn(ReactRouter, 'useParams').mockReturnValue({ })
 })
 
 describe ('Test the compnent renders properly based on value from stored calender context ',  () => {

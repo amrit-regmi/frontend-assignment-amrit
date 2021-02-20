@@ -3,6 +3,16 @@ import '@testing-library/jest-dom/extend-expect'
 import { render } from '@testing-library/react'
 import WeekRow from '../../../Components/Calender/WeekRow'
 import { getDayNumber, getFirstDayOfMonth } from '../../../Utils/dateHelper'
+import ReactRouter from 'react-router'
+
+
+jest.mock('react-router', () => ({
+  useParams: jest.fn().mockReturnValue({ id: '123' }),
+}))
+
+beforeEach(() => {
+  jest.spyOn(ReactRouter, 'useParams').mockReturnValue({ })
+})
 
 describe ('Rows test', () => {
   test('should render 7 cells',() => {

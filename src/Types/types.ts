@@ -35,3 +35,10 @@ export type Store = {
   calender:Calender,
   data?:WeeklyData
 }
+
+export type URLparams = {
+  mock?:string
+  year?:string
+  month?:string
+  day?:string
+}

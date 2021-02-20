@@ -49,8 +49,11 @@ export const getTotalWeekSpanForMonth = (month:MonthNumber,year:number): Possibl
  * @param date Date Object
  * @returns boolean if the given date same day as today
  */
-export const isToday = (date:Date):boolean => {
+export const isToday = (date:Date,mockToday?:Date | null):boolean => {
   const today = new Date()
+  if(mockToday) {
+    return isDateEqual(date,mockToday)
+  }
   return isDateEqual(today,date)
 }
 
