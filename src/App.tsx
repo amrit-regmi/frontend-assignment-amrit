@@ -32,8 +32,7 @@ const App:FC = () => {
             return null
           }
 
-          if(!data.completed && dateObj.getTime() <= today.getTime() && month === today.getMonth() &&  year === today.getFullYear()){ //If data is not completed on the past and month is notcurrent month
-
+          if( monthWithActions[date] || (!data.completed && dateObj.getTime() <= today.getTime() && month === today.getMonth() &&  year === today.getFullYear())){ //If data is not completed on the past and month is notcurrent month
             for(let i = today.getDate(); i<=dummyMonth.length; i++){ //Start at todays date and move forward until empty day is found till end of month
               if(monthWithActions[i]) continue
               monthWithActions[i] = data
